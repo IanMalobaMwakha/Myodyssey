@@ -2,6 +2,7 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from .forms import PostForm, EditForm
+from django.urls  import reverse_lazy
 #def home(request):
 #    return render(request, "home.html", {})
 
@@ -29,4 +30,5 @@ class UpdatePostView(UpdateView):
 class DeletePostView(DeleteView):
     model= Post
     template_name = 'delete_post.html' 
+    success_url = reverse_lazy('home')
 

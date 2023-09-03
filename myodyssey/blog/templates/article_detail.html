@@ -8,6 +8,8 @@
 <h1>{{ post.title }}</h1>
 <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - <button class="btn btn-secondary"><a href="{% url 'update_post' post.pk %}">(Edit Post)</a></button>
 </small>
+<br>
+<small><a href="{% url 'delete_post' post.pk %}">Delete This Post</a></small>
 <hr>
 <br>
 {{ post.body }}
